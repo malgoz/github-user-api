@@ -14,15 +14,15 @@ public class UserServiceTest {
 
     @Test
     public void testCalculateUserData() {
-        double excepted = 0.015995734470807783;
+        double expected = 0.015995734470807783;
         double actual = userService.calculateUserData(3751, 8);
-        assertEquals(excepted, actual);
+        assertEquals(expected, actual);
     }
 
     @Test
     public void testCalculateUserDataShouldThrowArithmeticException() {
-        String exceptedMessage = "Division by zero";
+        String expectedMessage = "Division by zero";
         Throwable exception = assertThrows(ArithmeticException.class, () ->  userService.calculateUserData(0, 8));
-        assertEquals(exceptedMessage, exception.getMessage());
+        assertEquals(expectedMessage, exception.getMessage());
     }
 }
